@@ -1,82 +1,140 @@
-<!DOCTYPE html>
-<html lang='en'>
-	<head>
-		<title>My GitHub project</title>
-		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+  <head>
+    <title>Circle</title>
+    <style>
+    .spinner {
+      margin: 100px auto;
+      width: 20px;
+      height: 20px;
+      position: relative;
+    }
 
-		<!--[if lt IE 9]><script type='text/javascript' src='assets/javascript/html5.js'></script><![endif]-->
-		<script type='text/javascript' src='assets/javascript/prettify.js'></script>
-    <script type='text/javascript' src='assets/js/jquery-2.1.0.min.js'></script>
-    <script type='text/javascript' src='assets/js/bootstrap.js'></script>
+    .container1 > div, .container2 > div, .container3 > div {
+      width: 6px;
+      height: 6px;
+      background-color: #333;
+      
+      border-radius: 100%;
+      position: absolute;
+      -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+      animation: bouncedelay 1.2s infinite ease-in-out;
+      /* Prevent first frame from flickering when animation starts */
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
 
-		<link rel='stylesheet' type='text/css' href='assets/css/style.css' />
-		<link rel='stylesheet' type='text/css' href='assets/css/bootstrap.css' />
-		<link rel='stylesheet' type='text/css' href='assets/css/prettify.css' />
-	</head>
-<body onload='prettyPrint()'>
-  <nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Brand</a>
-      </div>
-  
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link</a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-  <section class="panel jumbotron">
-    <h1>Your Project Title</h1>
-    
-    <a class="btn btn-primary btn-lg" role="button">Learn more</a>
-    <a class='btn btn-primary btn-lg' href='https://github.com/USER/REPOSITORY/zipball/master'>Download</a>
-    
-    <h2>Check out my awesome project:</h2>
-  	
-        <pre class='prettyprint'>
-          &lt;script&gt;
-          function display_awesomeness();
-          {
-            alert("Awesomeness!");
-          }
-          &lt;/script&gt;
-        &lt;form&gt;
-          &lt;input type="button" value="Click me!" onclick="display_awesomeness()" /&gt;
-        &lt;/form&gt;
-  			</pre>
-  </section>      	
-  
-  <footer>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Footer</a>
-        </div>
-      </div><!-- /.container-fluid -->
-    </nav>
-  </footer>
-</body>
+    .spinner .spinner-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .container2 {
+      -webkit-transform: rotateZ(45deg);
+      transform: rotateZ(45deg);
+    }
+
+    .container3 {
+      -webkit-transform: rotateZ(90deg);
+      transform: rotateZ(90deg);
+    }
+
+    .circle1 { top: 0; left: 0; }
+    .circle2 { top: 0; right: 0; }
+    .circle3 { right: 0; bottom: 0; }
+    .circle4 { left: 0; bottom: 0; }
+
+    .container2 .circle1 {
+      -webkit-animation-delay: -1.1s;
+      animation-delay: -1.1s;
+    }
+
+    .container3 .circle1 {
+      -webkit-animation-delay: -1.0s;
+      animation-delay: -1.0s;
+    }
+
+    .container1 .circle2 {
+      -webkit-animation-delay: -0.9s;
+      animation-delay: -0.9s;
+    }
+
+    .container2 .circle2 {
+      -webkit-animation-delay: -0.8s;
+      animation-delay: -0.8s;
+    }
+
+    .container3 .circle2 {
+      -webkit-animation-delay: -0.7s;
+      animation-delay: -0.7s;
+    }
+
+    .container1 .circle3 {
+      -webkit-animation-delay: -0.6s;
+      animation-delay: -0.6s;
+    }
+
+    .container2 .circle3 {
+      -webkit-animation-delay: -0.5s;
+      animation-delay: -0.5s;
+    }
+
+    .container3 .circle3 {
+      -webkit-animation-delay: -0.4s;
+      animation-delay: -0.4s;
+    }
+
+    .container1 .circle4 {
+      -webkit-animation-delay: -0.3s;
+      animation-delay: -0.3s;
+    }
+
+    .container2 .circle4 {
+      -webkit-animation-delay: -0.2s;
+      animation-delay: -0.2s;
+    }
+
+    .container3 .circle4 {
+      -webkit-animation-delay: -0.1s;
+      animation-delay: -0.1s;
+    }
+
+    @-webkit-keyframes bouncedelay {
+      0%, 80%, 100% { -webkit-transform: scale(0.0) }
+      40% { -webkit-transform: scale(1.0) }
+    }
+
+    @keyframes bouncedelay {
+      0%, 80%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+      } 40% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+      }
+    }
+    </style>
+  </head>
+  <body>
+  <div class="spinner">
+    <div class="spinner-container container1">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container2">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container3">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
+  </div>
+  </body>
 </html>
