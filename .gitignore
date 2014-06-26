@@ -1,7 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 config/site.php
 files/cache/*
 files/tmp/*
 =======
 .DS_Store
+>>>>>>> gh-pages
+=======
+.DS_Store
+*.espressostorage
+
+index_factory.html
+css_factory
 >>>>>>> gh-pages
