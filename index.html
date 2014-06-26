@@ -1,107 +1,140 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+  <head>
+    <title>Circle</title>
+    <style>
+    .spinner {
+      margin: 100px auto;
+      width: 20px;
+      height: 20px;
+      position: relative;
+    }
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
-	<title>Kehlima</title>
-	<meta name="author" content="Alvaro Trigo Lopez" />
-	<meta name="description" content="fullPage fixed header and footer." />
-	<meta name="keywords"  content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
-	<meta name="Resource-type" content="Document" />
-	<link rel="stylesheet" type="text/css" href="assets/css/jquery.fullPage.css" />
-	<link rel="stylesheet" type="text/css" href="assets/css/examples.css" />
-	<style>
-	
-	/* Style for our header texts 
-	* --------------------------------------- */
-	h1{
-		font-size: 5em;	
-		font-family: arial,helvetica;
-		color: #fff;
-		margin:0;
-		padding:0;
-	}
-	.intro p{
-		color: #fff;
-	}
-	
-	/* Centered texts in each section 
-	* --------------------------------------- */
-	.section{
-		text-align:center;
-	}
+    .container1 > div, .container2 > div, .container3 > div {
+      width: 6px;
+      height: 6px;
+      background-color: #333;
+      
+      border-radius: 100%;
+      position: absolute;
+      -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+      animation: bouncedelay 1.2s infinite ease-in-out;
+      /* Prevent first frame from flickering when animation starts */
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
 
-	/* Fixed header and footer.
-	* --------------------------------------- */
-	#header, #footer{
-		position:fixed;
-		height: 50px;
-		display:block;
-		width: 100%;
-		background: #333;
-		z-index:9;
-		text-align:center;
-		color: #f2f2f2;
-		padding: 20px 0 0 0;
-	}
-	
-	#header{
-		top:0px;
-	}
-	#footer{
-		bottom:0px;
-	}
-	
-	
-	/* Bottom menu
-	* --------------------------------------- */
-	#infoMenu {
-		bottom: 80px;
-	}
-	#infoMenu li a {
-		color: #fff;
-		z-index: 999;
-	}
-	
-	</style>
+    .spinner .spinner-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
 
-	<!--[if IE]>
-		<script type="text/javascript">
-			 var console = { log: function() {} };
-		</script>
-	<![endif]-->
+    .container2 {
+      -webkit-transform: rotateZ(45deg);
+      transform: rotateZ(45deg);
+    }
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.slimscroll.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.fullPage.js"></script>
-	<script type="text/javascript" src="assets/js/examples.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-		    $('#fullpage').fullpage();
-		});
-	</script>
+    .container3 {
+      -webkit-transform: rotateZ(90deg);
+      transform: rotateZ(90deg);
+    }
 
-</head>
-<body>
+    .circle1 { top: 0; left: 0; }
+    .circle2 { top: 0; right: 0; }
+    .circle3 { right: 0; bottom: 0; }
+    .circle4 { left: 0; bottom: 0; }
 
+    .container2 .circle1 {
+      -webkit-animation-delay: -1.1s;
+      animation-delay: -1.1s;
+    }
 
+    .container3 .circle1 {
+      -webkit-animation-delay: -1.0s;
+      animation-delay: -1.0s;
+    }
 
+    .container1 .circle2 {
+      -webkit-animation-delay: -0.9s;
+      animation-delay: -0.9s;
+    }
 
-<!--<div id="header">Header</div>
-<div id="footer">Footer</div>-->
+    .container2 .circle2 {
+      -webkit-animation-delay: -0.8s;
+      animation-delay: -0.8s;
+    }
 
-<div id="fullpage">
-	<div class="section active" id="section0"><h1>fullPage.js</h1></div>
-	<div class="section" id="section1">
-	    <div class="slide active"><h1>Simple Demo</h1></div>
-	    <div class="slide"><h1>Only text</h1></div>
-	    <div class="slide"><h1>And text</h1></div>
-	    <div class="slide"><h1>And more text</h1></div>
-	</div>
-	<div class="section" id="section2"><h1>No wraps, no extra markup</h1></div>
-	<div class="section" id="section3"><h1>Just the simplest demo ever</h1></div>
-</div>
+    .container3 .circle2 {
+      -webkit-animation-delay: -0.7s;
+      animation-delay: -0.7s;
+    }
 
+    .container1 .circle3 {
+      -webkit-animation-delay: -0.6s;
+      animation-delay: -0.6s;
+    }
 
-</body>
+    .container2 .circle3 {
+      -webkit-animation-delay: -0.5s;
+      animation-delay: -0.5s;
+    }
+
+    .container3 .circle3 {
+      -webkit-animation-delay: -0.4s;
+      animation-delay: -0.4s;
+    }
+
+    .container1 .circle4 {
+      -webkit-animation-delay: -0.3s;
+      animation-delay: -0.3s;
+    }
+
+    .container2 .circle4 {
+      -webkit-animation-delay: -0.2s;
+      animation-delay: -0.2s;
+    }
+
+    .container3 .circle4 {
+      -webkit-animation-delay: -0.1s;
+      animation-delay: -0.1s;
+    }
+
+    @-webkit-keyframes bouncedelay {
+      0%, 80%, 100% { -webkit-transform: scale(0.0) }
+      40% { -webkit-transform: scale(1.0) }
+    }
+
+    @keyframes bouncedelay {
+      0%, 80%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+      } 40% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+      }
+    }
+    </style>
+  </head>
+  <body>
+  <div class="spinner">
+    <div class="spinner-container container1">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container2">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
+    <div class="spinner-container container3">
+      <div class="circle1"></div>
+      <div class="circle2"></div>
+      <div class="circle3"></div>
+      <div class="circle4"></div>
+    </div>
+  </div>
+  </body>
 </html>
